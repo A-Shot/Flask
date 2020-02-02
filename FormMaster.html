@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>FormDen Example</title>
+</head>
+<body>
+
+<!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
+<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+
+<!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso12.css" />
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .form-group button, .bootstrap-iso form input.form-control, .bootstrap-iso form textarea.form-control, .bootstrap-iso form select.form-control, .bootstrap-iso form .form-group-lg input.form-control, .bootstrap-iso form .form-group-lg textarea.form-control, .bootstrap-iso form .form-group-lg select.form-control, .bootstrap-iso form .form-group-sm input.form-control, .bootstrap-iso form .form-group-sm textarea.form-control, .bootstrap-iso form .form-group-sm select.form-control{-webkit-border-radius: 20px;-moz-border-radius: 20px; border-radius: 20px;}.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #000000}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: #ffffff !important;}.bootstrap-iso .form-control:focus { border-color: #d3f49e;  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(211, 244, 158, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(211, 244, 158, 0.6);} .asteriskField{color: red;}.bootstrap-iso form .input-group-addon {color:#555555; background-color: #eeeeee; border-radius: 20px; padding-left:15px}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="formden_header">
+     <h2>
+      NEW PROJECT
+     </h2>
+     <p>
+     </p>
+    </div>
+    <form action="https://formden.com/post/Es7CnbAR/" method="post">
+     <div class="form-group ">
+      <label class="control-label " for="YTQ_INVOICE_NUMBER">
+       YTQ INVOICE NUMBER
+      </label>
+      <input class="form-control" id="YTQ_INVOICE_NUMBER" name="YTQ_INVOICE_NUMBER" placeholder="YTQ_0000" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="CLIENT_ID">
+       CLIENT ID
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="CLIENT_ID" name="CLIENT_ID">
+       <option value="FD">
+        FD
+       </option>
+       <option value="HW">
+        HW
+       </option>
+       <option value="GR">
+        GR
+       </option>
+       <option value="MRF">
+        MRF
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="name1">
+       PROJECT NUMBER
+      </label>
+      <input class="form-control" id="name1" name="name1" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="select1">
+       PROJECT TYPE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="select1" name="select1">
+       <option value="RING">
+        RING
+       </option>
+       <option value="EARRING">
+        EARRING
+       </option>
+       <option value="BRACELET">
+        BRACELET
+       </option>
+       <option value="PENDANT">
+        PENDANT
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label ">
+       RING TYPE
+      </label>
+      <div class=" ">
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox2" type="checkbox" value="SOLITAIRE"/>
+         SOLITAIRE
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox2" type="checkbox" value="CATHEDRAL"/>
+         CATHEDRAL
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox2" type="checkbox" value="THREE STONE"/>
+         THREE STONE
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox2" type="checkbox" value="ETERNTIY"/>
+         ETERNTIY
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="date">
+       RECIEVED DATE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="date1">
+       DUE DATE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <input class="form-control" id="date1" name="date1" placeholder="MM/DD/YYYY" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="number">
+       RING SIZE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <input class="form-control" id="number" name="number" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField">
+       METAL TYPE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <div class=" ">
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="PLT 950"/>
+         PLT 950
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="18K YELLOWGOLD"/>
+         18K YELLOWGOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="14K YELLOW GOLD"/>
+         14K YELLOW GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="18K WHITE GOLD"/>
+         18K WHITE GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="14K WHITE GOLD"/>
+         14K WHITE GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="18K ROSE GOLD"/>
+         18K ROSE GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="14K ROSE GOLD "/>
+         14K ROSE GOLD
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="select2">
+       MELEE COVERAGE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="select2" name="select2">
+       <option value="NONE">
+        NONE
+       </option>
+       <option value="HALF">
+        HALF
+       </option>
+       <option value="HALF+2">
+        HALF+2
+       </option>
+       <option value="3/4">
+        3/4
+       </option>
+       <option value="ETERNITY">
+        ETERNITY
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="select3">
+       BAND SETTING TYPE
+      </label>
+      <select class="select form-control" id="select3" name="select3">
+       <option value="1 ROW">
+        1 ROW
+       </option>
+       <option value="3 ROW">
+        3 ROW
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="select4">
+       CENTER STONE SHAPE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="select4" name="select4">
+       <option value="ROUND">
+        ROUND
+       </option>
+       <option value="RADIANT">
+        RADIANT
+       </option>
+       <option value="EMERALD">
+        EMERALD
+       </option>
+       <option value="PRINCESS">
+        PRINCESS
+       </option>
+       <option value="CUSHION">
+        CUSHION
+       </option>
+       <option value="PEAR">
+        PEAR
+       </option>
+       <option value="MARQUISE">
+        MARQUISE
+       </option>
+       <option value="HEART">
+        HEART
+       </option>
+       <option value="OVAL">
+        OVAL
+       </option>
+       <option value="ASSCHER">
+        ASSCHER
+       </option>
+       <option value="MOVAL">
+        MOVAL
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="number1">
+       CENTER STONE WEIGHT
+      </label>
+      <div class="input-group">
+       <input class="form-control" id="number1" name="number1" type="text"/>
+       <div class="input-group-addon">
+        CT
+       </div>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="select5">
+       COLOR
+      </label>
+      <select class="select form-control" id="select5" name="select5">
+       <option value="J">
+        J
+       </option>
+       <option value="I">
+        I
+       </option>
+       <option value="H">
+        H
+       </option>
+       <option value="G">
+        G
+       </option>
+       <option value="F">
+        F
+       </option>
+       <option value="E">
+        E
+       </option>
+       <option value="D">
+        D
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="select6">
+       CLARITY
+      </label>
+      <select class="select form-control" id="select6" name="select6">
+       <option value="F">
+        F
+       </option>
+       <option value="IF">
+        IF
+       </option>
+       <option value="VVS1">
+        VVS1
+       </option>
+       <option value="VVS2">
+        VVS2
+       </option>
+       <option value="VS1">
+        VS1
+       </option>
+       <option value="VS2">
+        VS2
+       </option>
+       <option value="SI1">
+        SI1
+       </option>
+       <option value="SI2">
+        SI2
+       </option>
+       <option value="I1">
+        I1
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="text">
+       GIA NUMBER
+      </label>
+      <input class="form-control" id="text" name="text" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="textarea">
+       ADDITIONAL PROJECT DESCRIPTION
+      </label>
+      <textarea class="form-control" cols="40" id="textarea" name="textarea" rows="10"></textarea>
+     </div>
+     <div class="form-group" id="div_checkbox1">
+      <label class="control-label " for="checkbox1">
+       DIAMONDS WITH YTQ?
+      </label>
+      <div class=" ">
+       <label class="checkbox-inline">
+        <input name="checkbox1" type="checkbox" value="YES"/>
+        YES
+       </label>
+       <label class="checkbox-inline">
+        <input name="checkbox1" type="checkbox" value="NO"/>
+        NO
+       </label>
+      </div>
+     </div>
+     <div class="form-group" id="div_checkbox3">
+      <label class="control-label " for="checkbox3">
+       DIAMOND SCANNED?
+      </label>
+      <div class=" ">
+       <label class="checkbox-inline">
+        <input name="checkbox3" type="checkbox" value="YES"/>
+        YES
+       </label>
+       <label class="checkbox-inline">
+        <input name="checkbox3" type="checkbox" value="NO"/>
+        NO
+       </label>
+      </div>
+     </div>
+     <div class="form-group" id="div_checkbox4">
+      <label class="control-label " for="checkbox4">
+       SAMPLE INCLUDED?
+      </label>
+      <div class=" ">
+       <label class="checkbox-inline">
+        <input name="checkbox4" type="checkbox" value="YES"/>
+        YES
+       </label>
+       <label class="checkbox-inline">
+        <input name="checkbox4" type="checkbox" value="NO"/>
+        NO
+       </label>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="url">
+       URL
+      </label>
+      <input class="form-control" id="url" name="url" type="text"/>
+     </div>
+     <div class="form-group">
+      <div>
+       <input name="_honey" style="display:none" type="text"/>
+       <button class="btn btn-success " name="submit" type="submit">
+        Submit
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+
+</body>
+
+</html>
