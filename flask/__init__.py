@@ -16,7 +16,7 @@ __version__ = '0.9'
 # in the module but are exported as public interface.
 from werkzeug.exceptions import abort
 from werkzeug.utils import redirect
-from jinja2 import Markup, escape
+from jinja2 import Markup, escape0
 
 from .app import Flask, Request, Response
 from .config import Config

@@ -1,4 +1,3 @@
-
 from flask import Flask, jsonify, request,render_template, request
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
