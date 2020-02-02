@@ -1,0 +1,303 @@
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso12.css" /> 
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .form-group button, .bootstrap-iso form input.form-control, .bootstrap-iso form textarea.form-control, .bootstrap-iso form select.form-control, .bootstrap-iso form .form-group-lg input.form-control, .bootstrap-iso form .form-group-lg textarea.form-control, .bootstrap-iso form .form-group-lg select.form-control, .bootstrap-iso form .form-group-sm input.form-control, .bootstrap-iso form .form-group-sm textarea.form-control, .bootstrap-iso form .form-group-sm select.form-control{-webkit-border-radius: 20px;-moz-border-radius: 20px; border-radius: 20px;}.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; color: #000000}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: #ffffff !important;}.bootstrap-iso .form-control:focus { border-color: #d3f49e;  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(211, 244, 158, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(211, 244, 158, 0.6);} .asteriskField{color: red;}.bootstrap-iso form .input-group-addon {color:#555555; background-color: #eeeeee; border-radius: 20px; padding-left:15px}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="formden_header">
+     <h2>
+      NEW PROJECT
+     </h2>
+     <p>
+     </p>
+    </div>
+    <form method="post" name ="form">
+     <div class="form-group ">
+      <label class="control-label requiredField" for="name">
+       YTQ INVOICE NUMBER
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <input class="form-control" id="name" name="name" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="select">
+       CLIENT ID
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="select" name="select">
+       <option value="FD">
+        FD
+       </option>
+       <option value="HW">
+        HW
+       </option>
+       <option value="GR">
+        GR
+       </option>
+       <option value="MRF">
+        MRF
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="name1">
+       PROJECT NUMBER
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <input class="form-control" id="name1" name="name1" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="select1">
+       PROJECT TYPE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="select1" name="select1">
+       <option value="RING">
+        RING
+       </option>
+       <option value="EARRING">
+        EARRING
+       </option>
+       <option value="BRACELET">
+        BRACELET
+       </option>
+       <option value="PENDANT">
+        PENDANT
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="date">
+       RECIEVED DATE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="date1">
+       DUE DATE
+      </label>
+      <input class="form-control" id="date1" name="date1" placeholder="MM/DD/YYYY" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="number">
+       RING SIZE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <input class="form-control" id="number" name="number" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField">
+       METAL TYPE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <div class=" ">
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="PLT 950"/>
+         PLT 950
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="18K YELLOWGOLD"/>
+         18K YELLOWGOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="14K YELLOW GOLD"/>
+         14K YELLOW GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="18K WHITE GOLD"/>
+         18K WHITE GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="14K WHITE GOLD"/>
+         14K WHITE GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="18K ROSE GOLD"/>
+         18K ROSE GOLD
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="14K ROSE GOLD "/>
+         14K ROSE GOLD
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="select2">
+       MELEE COVERAGE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="select2" name="select2">
+       <option value="NONE">
+        NONE
+       </option>
+       <option value="HALF">
+        HALF
+       </option>
+       <option value="HALF+2">
+        HALF+2
+       </option>
+       <option value="3/4">
+        3/4
+       </option>
+       <option value="ETERNITY">
+        ETERNITY
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="select3">
+       BAND SETTING TYPE
+      </label>
+      <select class="select form-control" id="select3" name="select3">
+       <option value="1 ROW">
+        1 ROW
+       </option>
+       <option value="3 ROW">
+        3 ROW
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="select4">
+       CENTER STONE SHAPE
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <select class="select form-control" id="select4" name="select4">
+       <option value="ROUND">
+        ROUND
+       </option>
+       <option value="RADIANT">
+        RADIANT
+       </option>
+       <option value="EMERALD">
+        EMERALD
+       </option>
+       <option value="PRINCESS">
+        PRINCESS
+       </option>
+       <option value="CUSHION">
+        CUSHION
+       </option>
+       <option value="PEAR">
+        PEAR
+       </option>
+       <option value="MARQUISE">
+        MARQUISE
+       </option>
+       <option value="HEART">
+        HEART
+       </option>
+       <option value="OVAL">
+        OVAL
+       </option>
+       <option value="ASSCHER">
+        ASSCHER
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="number1">
+       CENTER STONE WEIGHT
+      </label>
+      <input class="form-control" id="number1" name="number1" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="textarea">
+       ADDITIONAL PROJECT DESCRIPTION
+      </label>
+      <textarea class="form-control" cols="40" id="textarea" name="textarea" rows="10"></textarea>
+     </div>
+     <div class="form-group ">
+      <label class="control-label ">
+       DIAMONDS WITH YTQ?
+      </label>
+      <div class=" ">
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox1" type="checkbox" value="YES"/>
+         YES
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox1" type="checkbox" value="NO"/>
+         NO
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="form-group ">
+      <label class="control-label ">
+       Check all that apply
+      </label>
+      <div class=" ">
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox2" type="checkbox" value="First Choice"/>
+         First Choice
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox2" type="checkbox" value="Second Choice"/>
+         Second Choice
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox2" type="checkbox" value="Third Choice"/>
+         Third Choice
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="form-group">
+      <div>
+       <button class="btn btn-success " name="submit" type="submit">
+        Submit
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('.static', filename='button.js')}}"></script>
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <h1>Hello, Bootstrap</h1>
+  <button type="button" class="btn btn-primary"  id = "button">Primary</button>
+  
+{% endblock %}

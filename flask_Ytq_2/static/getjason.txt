@@ -1,0 +1,9 @@
+$( "#butbon" ).click(function() {  
+    
+    console.log('boo');
+    $.getJSON('/Ring_Project', {
+	Data_Flask: "nice",
+        }, function(data) {
+	$("#H").text(data.result);
+	});
+ });

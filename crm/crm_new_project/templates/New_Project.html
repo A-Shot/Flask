@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .form-group button, .bootstrap-iso form input.form-control, .bootstrap-iso form textarea.form-control, .bootstrap-iso form select.form-control, .bootstrap-iso form .form-group-lg input.form-control, .bootstrap-iso form .form-group-lg textarea.form-control, .bootstrap-iso form .form-group-lg select.form-control, .bootstrap-iso form .form-group-sm input.form-control, .bootstrap-iso form .form-group-sm textarea.form-control, .bootstrap-iso form .form-group-sm select.form-control{-webkit-border-radius: 20px;-moz-border-radius: 20px; border-radius: 20px;}.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: #337ab7 !important;}.bootstrap-iso .outline, .bootstrap-iso .outline:focus{background-color: transparent; border: 2px solid #337ab7} .bootstrap-iso .outline:hover{background-color: transparent; border: 2px solid#5ba2df; color: #5ba2df !important} .asteriskField{color: red;}.bootstrap-iso form .input-group-addon {color:#555555; background-color: #d2eaee; border-radius: 20px; padding-left:15px}</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+    <title>YTQuality</title> 
+     
+     
+     
+  </head>
+  <body>
+      
+      
+   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <h4> YTQuality </h4>
+    <a class="btn btn-primary" href="/" role="button">Home</a>
+   </nav>
+    <br> <br/>
+ 
+    
+  	<div class="bootstrap-iso">
+	 <div class="container-fluid">
+	  <div class="row">
+	   <div class="col-md-6 col-sm-6 col-xs-12">
+	    <form method="post">
+	     <div class="form-group ">
+	      <div class="input-group">
+	       <div class="input-group-addon">
+	        YTQuality
+	       </div>
+	       <input class="form-control" id="YTQ_N" name="YTQ_N" placeholder="{{ data_2 }}" type="text"/>
+	       <div class="input-group-addon">
+	        <i class="fa fa-check">
+	        </i>
+	       </div>
+	      </div>
+	     </div>
+	     <div class="form-group ">
+	      <label class="control-label requiredField" for="Client">
+	       Client
+	       <span class="asteriskField">
+	        *
+	       </span>
+	      </label>
+	      <select class="select form-control" id="Client" name="Client">
+		
+		    {% for o in data %}
+              <option value="{{ o }}">{{ o }}</option>
+              {% endfor %}
+              
+	
+	      </select>
+	     </div>
+	     <div class="form-group ">
+	      <div class="input-group">
+	       <div class="input-group-addon">
+	        Project_N
+	       </div>
+	       <input class="form-control" id="Project_N" name="Project_N" placeholder="NA" type="text"/>
+	       <div class="input-group-addon">
+	        <i class="fa fa-check">
+	        </i>
+	       </div>
+	      </div>
+	     </div>
+	     <div>
+		
+        <button type="button" class="btn btn-info"  id="Gen">Generate</button>
+
+         </div>
+	     <br> <br/>
+	     <br> <br/>
+	     <div class="form-group">
+	      <div>
+              <button class="btn btn-primary" type="submit">Button</button>
+	      </div>
+	     </div>
+	    </form>
+	   </div>
+	  </div>
+	 </div>
+	</div>  
+    
+    <script>
+    $(document).ready( function(){
+ $("#Gen").click( function( ){
+ 	
+          $.getJSON("/Generate",{
+          data_:"do"
+          },function(data){
+          
+         $("#Project_N").val(data.res);
+     });
+     
+     });
+  });    	
+ 
+    </script>
+    
+
+  </body>
+</html>

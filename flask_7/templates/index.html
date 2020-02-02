@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Title</title>
+	<style type="text/css">
+	/* CSS styles here... */
+	</style>
+	</head>
+	
+	<body>
+		
+		
+	<form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+  </form>
+  
+  
+<ul>
+   {% index = 0 %}
+    {% for imj in data %}
+      
+    <img src={{ imj }} height=500" width="500" >{{ index }}</img>
+    
+    {% endfor %}
+    
+     <img src ={{ url_for("test1", filename = mdata ) }} height="500" width="500" ></img>
+     
+    
+</ul>
+  
+	
+	</body>
+	
+</html>

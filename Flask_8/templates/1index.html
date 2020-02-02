@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Title</title>
+	<style type="text/css">
+	/* CSS styles here... */
+	</style>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	
+	</head>
+	
+	<body>
+	
+	<p>Test</p>
+	
+	 <button type="button" id="button">Click Me!</button>
+	
+	<script>
+	 
+$( document ).ready(function() {
+   $("#button").click( function(event){
+      $("p").text("cleked");
+    
+     var data_ = "good"
+     $.getJSON("/test",{data_: data_},function(data){
+     $("p").text(data.res);
+     });
+
+     
+     event.preventDefault();
+    });
+  });
+	</script>
+	
+	
+	</body>
+	
+</html>

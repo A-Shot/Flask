@@ -1,0 +1,46 @@
+ <script
+     src="https://code.jquery.com/jquery-.js"
+     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+     crossorigin="anonymous"></script>
+
+
+
+<div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Client
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+  
+    <button class="dropdown-item" type="button">Action</button>
+    
+    <button class="dropdown-item" type="button">Another action</button>
+    
+    <button class="dropdown-item" type="button">Something else here</button>
+    
+  </div>
+</div>
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+
+
+<form class="form-inline" method="POST" action="{{ url_for('test') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">Please select</span>
+            <select name="comp_select" class="selectpicker form-control">
+              {% for o in data %}
+              <option value="{{ o }}">{{ o }}</option>
+              {% endfor %}
+            </select>
