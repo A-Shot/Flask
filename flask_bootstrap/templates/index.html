@@ -11,10 +11,12 @@ YTQ
     <form method="POST" action="/">
        <dl>
        {{ form.crf_token }}
-       {{ wtf.form_field(form.username) }}
-       {{ wtf.form_field(form.myField) }}
+       {{ wtf.form_field(form.YTQ_I_N ) }}
+       {{ form.Gen }}
+       {{ wtf.form_field(form.CLIENT_ID) }}
+       {{ wtf.form_field(form.Projec_N) }}
        {{ wtf.form_field(form.Ring_Style) }}
-       {{ wtf.form_field(form.password) }}
+
     
        <input class="btn btn-primary" type="submit" value="Login">
         </dl>

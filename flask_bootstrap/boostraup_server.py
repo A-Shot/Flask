@@ -1,9 +1,10 @@
 from flask import Flask, jsonify, request,render_template, request
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-from wtforms import StringField,SelectField,RadioField
+from wtforms import StringField,SelectField,RadioField,SubmitField
 from wtforms.validators import DataRequired
 import csv
+from folder_crt import *
 
 def csv_c(mydict):
     with open('dict.csv', 'w') as csv_file:
@@ -13,16 +14,19 @@ def csv_c(mydict):
 app = Flask(__name__)
 Bootstrap(app)
 app.config['SECRET_KEY'] = 'DontTellAnyone'
-myChoices = [('Banana', 'banana'), ('Pineapple', 'pineapple')]
 
+YTQ_job_num = 0
+myChoices = [('Banana', 'banana'), ('Pineapple', 'pineapple')]
+RingStyle = [('S','Solitare'),('3st','3Stone')]
 
 
 class Inputs(FlaskForm):
-   
-    username = StringField('ProjectN', validators=[DataRequired()],default="0001-HW-5890782")
-    password = StringField('password', validators=[DataRequired()],default="")
-    myField = SelectField('ProjectN',validators=[DataRequired()] ,choices = myChoices)
-    Ring_Style = RadioField('Ring_Style', choices = [('S','Solitare'),('3st','3Stone')])
+	YTQ_I_N = StringField('YTQ INVOICE NUMBER', validators=[DataRequired()],default="0001-HW-5890782")
+	Gen = SubmitField('Gen')
+	CLIENT_ID = SelectField('CLIENT ID', validators=[DataRequired()], choices=myChoices)
+	Projec_N = StringField('Project N ', validators=[DataRequired()],default="")
+	Ring_Style = RadioField('Ring_Style', choices   =RingStyle)
+	#Submit = SubmitField('Submit')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -32,9 +36,15 @@ def index():
 	x.pop("csrf_token", None)
 	csv_c(x)
 	print (x)
+	if form.Gen.data:
+		YTQ_job_num = YT_num_creator()
+		print("YTQ_job_num____________"+ str(YTQ_job_num))
 	if form.validate_on_submit():
 		return 'Form Successfully Submitted!'
+
 	return render_template('index.html', form=form)
+
+
 
 
 if __name__ == "__main__":
