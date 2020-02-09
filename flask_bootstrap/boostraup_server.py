@@ -14,6 +14,12 @@ def csv_c(mydict):
 app = Flask(__name__)
 Bootstrap(app)
 app.config['SECRET_KEY'] = 'DontTellAnyone'
+Client_FOLDER = os.path.basename('Client')
+Client_List = os.listdir(Client_FOLDER)
+ClientList = tuple(Client_List)
+print("Start ")
+print(Client_List)
+Client_List.append("Clients")
 
 YTQ_job_num = 0
 myChoices = [('Banana', 'banana'), ('Pineapple', 'pineapple')]
@@ -23,13 +29,14 @@ RingStyle = [('S','Solitare'),('3st','3Stone')]
 class Inputs(FlaskForm):
 	YTQ_I_N = StringField('YTQ INVOICE NUMBER', validators=[DataRequired()],default="0001-HW-5890782")
 	Gen = SubmitField('Gen')
-	CLIENT_ID = SelectField('CLIENT ID', validators=[DataRequired()], choices=myChoices)
+	CLIENT_ID = SelectField('CLIENT ID', validators=[DataRequired()], choices=ClientList)
 	Projec_N = StringField('Project N ', validators=[DataRequired()],default="")
 	Ring_Style = RadioField('Ring_Style', choices   =RingStyle)
 	#Submit = SubmitField('Submit')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+
 	#form = LoginForm()
 	form = Inputs()
 	x=dict(request.form)
